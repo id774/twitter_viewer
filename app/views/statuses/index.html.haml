@@ -9,6 +9,7 @@
           %table{:class => "condensed-table zebra-striped"}
             %thead
               %tr
+                %th Seq
                 %th Id
                 %th Uid
                 %th Screen name
@@ -16,8 +17,12 @@
                 %th Created at
                 %th Protected
             %tbody
+              - seq = 0
               - @statuses.each do |status|
+                - seq += 1
                 %tr
+                  %td
+                    = seq
                   %td
                     = link_to status.id, edit_status_path(status)
                   %td
