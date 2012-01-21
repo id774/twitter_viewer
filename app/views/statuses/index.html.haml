@@ -1,0 +1,34 @@
+- title 'Twitter DB Viewer - Index'
+
+.status-index
+  .container
+    .content
+      .row
+        .span16
+          %h2 Twitter DB Viewer - Index
+          %table{:class => "condensed-table zebra-striped"}
+            %thead
+              %tr
+                %th Id
+                %th Uid
+                %th Screen name
+                %th Text
+                %th Created at
+                %th Protected
+            %tbody
+              - @statuses.each do |status|
+                %tr
+                  %td
+                    = link_to status.id, edit_status_path(status)
+                  %td
+                    = link_to status.uid, "/statuses?uid=" + status.uid.to_s unless status.id.nil?
+                  %td
+                    = link_to status.screen_name, "/statuses?screen_name=" + status.screen_name.to_s unless status.screen_name.nil?
+                  %td
+                    = status.text
+                  %td
+                    = link_to status.created_at, edit_status_path(status)
+                  %td
+                    = status.protected ? '*' : ''
+
+          = paginate @statuses, :window => 2500, :outer_window => 0

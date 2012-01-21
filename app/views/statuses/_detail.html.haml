@@ -1,0 +1,51 @@
+%h3
+  Detail of Tweet
+  %p
+    %table{:class => "condensed-table bordered-table zebra-striped"}
+      %thead
+        %tr
+          %th{:style => "width: 150px;"} Item
+          %th Value
+      %tbody
+        %tr
+          %td Id
+          %td= @status.id
+        %tr
+          %td Uid
+          %td
+            = link_to @status.uid, "/statuses?uid=" + @status.uid.to_s unless @status.id.nil?
+        %tr
+          %td Screen name
+          %td
+            = link_to @status.screen_name, "https://twitter.com/#!/" + @status.screen_name.to_s unless @status.screen_name.nil?
+        %tr
+          %td Text
+          %td= @status.text
+        %tr
+          %td Created at
+          %td= @status.created_at
+        %tr
+          %td Protected
+          %td
+            = @status.protected ? 'Protected' : ''
+        %tr
+          %td In reply to status
+          %td
+            = link_to @status.in_reply_to_status_id, "https://twitter.com/#!/" + @status.in_reply_to_screen_name.to_s + "/status/" + @status.in_reply_to_status_id.to_s unless @status.in_reply_to_status_id.nil?
+        %tr
+          %td In reply to user
+          %td
+            = link_to @status.in_reply_to_user_id, "/statuses?uid=" + @status.in_reply_to_user_id.to_s unless @status.in_reply_to_user_id.nil?
+        %tr
+          %td In reply to screen name
+          %td
+            = link_to @status.in_reply_to_screen_name, "https://twitter.com/#!/" + @status.in_reply_to_screen_name.to_s unless @status.in_reply_to_screen_name.nil?
+        %tr
+          %td Friends count
+          %td= @status.friends_count
+        %tr
+          %td Followers count
+          %td= @status.followers_count
+        %tr
+          %td Source
+          %td= @status.source

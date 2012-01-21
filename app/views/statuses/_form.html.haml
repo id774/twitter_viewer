@@ -1,0 +1,13 @@
+= form_for @status, :url => {:controller => 'statuses', :action => 'update'} do |f|
+  -if @status.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@status.errors.count, "error")} prohibited this service from being saved:"
+      %ul
+        - @status.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    Screen name
+    = f.text_field :screen_name
+  .actions
+    = f.submit 'Save'
