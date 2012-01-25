@@ -1,4 +1,6 @@
 Gemfile.lock
+vendor/bundler
+vendor/bundler64
 .bundle
 db/*.sqlite3
 log/*.log
