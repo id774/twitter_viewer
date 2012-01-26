@@ -18,9 +18,8 @@
             - if devise_mapping.rememberable?
               %ul.inputs-list
                 %li
-                  %label
-                    = f.check_box :remember_me
-                    %span パスワードを記憶する
+                  = f.check_box :remember_me
+                  %span パスワードを記憶する
         .actions
           = f.submit "ログイン", :class => 'btn primary'
   .span6
