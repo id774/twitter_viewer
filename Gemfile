@@ -17,9 +17,9 @@ end
 
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'devise'
+#gem 'devise'
 gem 'kaminari'
-gem 'i18n_generators'
+#gem 'i18n_generators'
 
 gem 'execjs'
 gem 'therubyracer'

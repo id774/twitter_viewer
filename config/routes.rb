@@ -3,5 +3,5 @@ RailsApp::Application.routes.draw do
   root :to => 'statuses#index'
   resources :statuses,
     :only => [:index, :edit]
-  devise_for :users
+  #devise_for :users
 end
