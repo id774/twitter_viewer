@@ -15,7 +15,6 @@
                 %th Screen name
                 %th Text
                 %th Protected
-                %th Source
                 %th Friends
                 %th Followers
             %tbody
@@ -35,8 +34,6 @@
                     = status.text
                   %td
                     = status.protected ? '*' : ''
-                  %td
-                    = status.source
                   %td
                     = status.friends_count
                   %td
