@@ -10,12 +10,14 @@
             %thead
               %tr
                 %th Seq
-                %th Id
+                %th Created at
                 %th Uid
                 %th Screen name
                 %th Text
-                %th Created at
                 %th Protected
+                %th Source
+                %th Friends
+                %th Followers
             %tbody
               - seq = 0
               - @statuses.each do |status|
@@ -24,7 +26,7 @@
                   %td
                     = seq
                   %td
-                    = link_to status.id, edit_status_path(status)
+                    = link_to status.created_at, edit_status_path(status)
                   %td
                     = link_to status.uid, "/statuses?uid=" + status.uid.to_s unless status.id.nil?
                   %td
@@ -32,8 +34,12 @@
                   %td
                     = status.text
                   %td
-                    = link_to status.created_at, edit_status_path(status)
-                  %td
                     = status.protected ? '*' : ''
+                  %td
+                    = status.source
+                  %td
+                    = status.friends_count
+                  %td
+                    = status.followers_count
 
-          = paginate @statuses, :window => 2500, :outer_window => 0
+          = paginate @statuses, :window => 5000, :outer_window => 0

@@ -7,6 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore-min
-//= require backbone-min
 //= require ICanHaz.min
 //= require_tree .
