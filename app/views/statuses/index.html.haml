@@ -11,9 +11,8 @@
               %tr
                 %th Seq
                 %th Created
-                %th SN/UID/P
+                %th SN/UID/P/FF
                 %th Text
-                %th F/F
             %tbody
               - seq = 0
               - @statuses.each do |status|
@@ -29,11 +28,9 @@
                     = link_to status.uid, "/statuses?uid=" + status.uid.to_s unless status.id.nil?
                     %br
                     = status.protected ? '*' : ''
+                    = status.friends_count
+                    = status.followers_count
                   %td
                     = status.text
-                  %td
-                    = status.friends_count
-                    %br
-                    = status.followers_count
 
           = paginate @statuses, :window => 5000, :outer_window => 0
