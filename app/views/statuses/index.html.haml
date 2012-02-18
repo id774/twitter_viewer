@@ -10,13 +10,10 @@
             %thead
               %tr
                 %th Seq
-                %th Created at
-                %th Screen name
+                %th Created
+                %th SN/UID/P
                 %th Text
-                %th Protected
-                %th Friends
-                %th Followers
-                %th Uid
+                %th F/F
             %tbody
               - seq = 0
               - @statuses.each do |status|
@@ -28,15 +25,15 @@
                     = link_to status.created_at, edit_status_path(status)
                   %td
                     = link_to status.screen_name, "/statuses?screen_name=" + status.screen_name.to_s unless status.screen_name.nil?
+                    %br
+                    = link_to status.uid, "/statuses?uid=" + status.uid.to_s unless status.id.nil?
+                    %br
+                    = status.protected ? '*' : ''
                   %td
                     = status.text
                   %td
-                    = status.protected ? '*' : ''
-                  %td
                     = status.friends_count
-                  %td
+                    %br
                     = status.followers_count
-                  %td
-                    = link_to status.uid, "/statuses?uid=" + status.uid.to_s unless status.id.nil?
 
           = paginate @statuses, :window => 5000, :outer_window => 0
