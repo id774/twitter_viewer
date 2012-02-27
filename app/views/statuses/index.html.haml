@@ -9,9 +9,10 @@
           %table{:class => "condensed-table zebra-striped"}
             %thead
               %tr
-                %th Seq
+                %th No
                 %th Created
-                %th SN/UID/P/FF
+                %th SN(P)/UID
+                %th FF
                 %th Text
             %tbody
               - seq = 0
@@ -21,13 +22,13 @@
                   %td
                     = seq
                   %td
-                    = link_to status.created_at, edit_status_path(status)
+                    = link_to status.created_at.strftime("%Y/%m/%d %X"), edit_status_path(status)
                   %td
                     = link_to status.screen_name, "/statuses?screen_name=" + status.screen_name.to_s unless status.screen_name.nil?
+                    = status.protected ? '*' : ''
                     %br
                     = link_to status.uid, "/statuses?uid=" + status.uid.to_s unless status.id.nil?
-                    %br
-                    = status.protected ? '*' : ''
+                  %td
                     = status.friends_count
                     = status.followers_count
                   %td

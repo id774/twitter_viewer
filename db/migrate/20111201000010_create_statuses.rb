@@ -4,7 +4,7 @@ class CreateStatuses < ActiveRecord::Migration
       t.integer :uid
       t.string :screen_name
       t.string :text
-      t.string :created_at
+      t.datetime :created_at
       t.boolean :protected
       t.integer :in_reply_to_status_id
       t.integer :in_reply_to_user_id
