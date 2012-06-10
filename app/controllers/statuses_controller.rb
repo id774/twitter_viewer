@@ -6,10 +6,8 @@ class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json
   def index
-    @search = Status.search(params[:search])
-    # @statuses = Status.scoped(:order => "id DESC").page(params[:page]).per(1000)
+    @search = Status.search(params[:search], :order => "id DESC")
     @statuses = @search.paginate(:page => params[:page], :order => "id DESC")
-    # @statuses = @search.scoped(:order => "id DESC").page(params[:page]).per(1000)
 
     unless params[:uid].nil?
       @statuses = @statuses.where(:uid => params[:uid])

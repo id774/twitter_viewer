@@ -18,7 +18,6 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 #gem 'devise', "< 2"
-#gem 'kaminari'
 #gem 'i18n_generators'
 
 #gem 'execjs'
