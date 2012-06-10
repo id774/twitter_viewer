@@ -45,3 +45,25 @@ class StatusesController < ApplicationController
     end
   end
 end
+
+class BootstrapPaginationRenderer < WillPaginate::ActionView::LinkRenderer
+  private
+  def previous_or_next_page(page, text, classname)
+    link(text, page, :class => classname)
+  end
+
+  public
+  # method as you see fit.
+  def to_html
+    html = pagination.map do |item|
+      tag(:li,
+        ((item.is_a?(Fixnum))?
+          page_number(item) :
+          send(item)))
+    end.join(@options[:link_separator])
+
+    html = tag(:ul, html)
+
+    @options[:container] ? html_container(html) : html
+  end
+end

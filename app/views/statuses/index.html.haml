@@ -39,4 +39,4 @@
                     = status.text
 
           -# = paginate @statuses, :window => 5000, :outer_window => 0
-          = will_paginate @statuses
+          = will_paginate @statuses, :renderer => BootstrapPaginationRenderer
