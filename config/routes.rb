@@ -4,5 +4,6 @@ RailsApp::Application.routes.draw do
   resources :statuses,
     :only => [:index, :edit]
   #devise_for :users
-  match '*path', :to=>'application#error_404'
+  match 'false', :to => 'statuses#index'
+  match '*path', :to => 'application#error_404'
 end
