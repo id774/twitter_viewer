@@ -5,6 +5,11 @@
     .content
       .row
         .span16
+          = form_for @search, :url => statuses_path, :html => {:method => :get} do |f|
+            = f.label :text
+            = f.text_field :text_contains
+            = f.submit
+
           %table{:class => "condensed-table zebra-striped"}
             %thead
               %tr
@@ -33,4 +38,5 @@
                   %td
                     = status.text
 
-          = paginate @statuses, :window => 5000, :outer_window => 0
+          -# = paginate @statuses, :window => 5000, :outer_window => 0
+          = will_paginate @statuses

@@ -18,7 +18,7 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 #gem 'devise', "< 2"
-gem 'kaminari'
+#gem 'kaminari'
 #gem 'i18n_generators'
 
 #gem 'execjs'
@@ -32,6 +32,10 @@ gem 'kaminari'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+# Search
+gem "meta_search"
+gem "will_paginate", "~> 3.0.pre2"
 
 group :test do
   gem 'rspec'
