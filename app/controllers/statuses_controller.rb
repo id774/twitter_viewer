@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 class StatusesController < ApplicationController
+  before_filter :authenticate if Auth.basic_auth
   #before_filter :authenticate_user!
 
   # GET /statuses
@@ -25,6 +26,14 @@ class StatusesController < ApplicationController
   # GET /statuses/1/edit
   def edit
     @status = Status.find(params[:id])
+  end
+
+  private
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == Auth.username &&
+      password == Auth.password
+    end
   end
 end
 
