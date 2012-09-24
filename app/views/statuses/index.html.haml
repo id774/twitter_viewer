@@ -35,7 +35,11 @@
                         = status.followers_count
                     - else
                       = status.friends_count
-                      = status.followers_count
+                      - if status.friends_count < 300 and status.followers_count < 300
+                        %b
+                          = status.followers_count
+                      - else
+                        = status.followers_count
                   %td
                     = status.text
 
