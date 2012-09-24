@@ -29,8 +29,13 @@
                     %br
                     = link_to status.uid, "/statuses?uid=" + status.uid.to_s unless status.id.nil?
                   %td
-                    = status.friends_count
-                    = status.followers_count
+                    - if status.friends_count < 100 and status.followers_count < 100
+                      %b
+                        = status.friends_count
+                        = status.followers_count
+                    - else
+                      = status.friends_count
+                      = status.followers_count
                   %td
                     = status.text
 
