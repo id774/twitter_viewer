@@ -10,12 +10,8 @@ class StatusesController < ApplicationController
     @search = Status.search(params[:search], :order => "id DESC")
     @statuses = @search.paginate(:page => params[:page], :order => "id DESC")
 
-    unless params[:uid].nil?
-      @statuses = @statuses.where(:uid => params[:uid])
-    end
-    unless params[:screen_name].nil?
-      @statuses = @statuses.where(:screen_name => params[:screen_name])
-    end
+    @statuses = @statuses.where(:uid => params[:uid]) unless params[:uid].nil?
+    @statuses = @statuses.where(:screen_name => params[:screen_name]) unless params[:screen_name].nil?
 
     respond_to do |format|
       format.html # index.html.erb
