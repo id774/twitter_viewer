@@ -24,7 +24,7 @@
                   %td
                     = link_to status.created_at.strftime("%Y/%m/%d %X"), edit_status_path(status)
                   %td
-                    = link_to status.screen_name, "/statuses?screen_name=" + status.screen_name.to_s unless status.screen_name.nil?
+                    = link_to status.screen_name, "http://twitter.com/" + status.screen_name.to_s unless status.screen_name.nil?
                     = status.protected ? '*' : ''
                     %br
                     = link_to status.uid, "/statuses?uid=" + status.uid.to_s unless status.id.nil?
