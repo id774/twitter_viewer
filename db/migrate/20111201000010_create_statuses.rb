@@ -3,6 +3,7 @@ class CreateStatuses < ActiveRecord::Migration
     create_table :statuses do |t|
       t.integer :uid
       t.string :screen_name
+      t.string :id_str
       t.string :text
       t.datetime :created_at
       t.boolean :protected
