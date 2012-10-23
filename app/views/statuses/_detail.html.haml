@@ -16,7 +16,7 @@
         %tr
           %td Screen name
           %td
-            = link_to @status.screen_name, "https://twitter.com/#!/" + @status.screen_name.to_s unless @status.screen_name.nil?
+            = link_to @status.screen_name, "/statuses?screen_name=" + @status.screen_name.to_s unless @status.screen_name.nil?
         %tr
           %td Id_str
           %td

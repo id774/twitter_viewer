@@ -27,7 +27,7 @@
                     = link_to status.screen_name, "/statuses?screen_name=" + status.screen_name.to_s unless status.screen_name.nil?
                     = status.protected ? '*' : ''
                     %br
-                    = link_to status.uid, "/statuses?uid=" + status.uid.to_s unless status.id.nil?
+                    = link_to status.uid, "https://twitter.com/" + status.screen_name.to_s unless status.uid.nil?
                   %td
                     - if status.friends_count >= 300 or status.followers_count >= 300
                       = status.friends_count
