@@ -1,4 +1,3 @@
-
 - title 'Timeline Viewer - Index'
 
 .status-index
@@ -20,9 +19,9 @@
                 - seq += 1
                 %tr
                   %td
-                    = link_to seq, "http://twitter.com/" + status.screen_name + "/status/" + status.id_str
+                    = link_to seq, edit_status_path(status)
                   %td
-                    = link_to status.created_at.strftime("%Y/%m/%d %X"), edit_status_path(status)
+                    = link_to status.created_at.strftime("%Y/%m/%d %X"), "http://twitter.com/" + status.screen_name + "/status/" + status.id_str
                   %td
                     = link_to status.screen_name, "/statuses?screen_name=" + status.screen_name.to_s unless status.screen_name.nil?
                     = status.protected ? '*' : ''
