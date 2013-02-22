@@ -20,3 +20,18 @@ one:
   followers_count: 2000
   source: 'Test Client'
 
+two:
+  id: 2
+  uid: 2
+  screen_name: 'hoge'
+  text: 'ふが'
+  created_at: '2013-02-22'
+  protected: false
+  in_reply_to_status_id: 3
+  in_reply_to_user_id: 4
+  in_reply_to_screen_name: 'fuga'
+  status_count: 500
+  friends_count: 3000
+  followers_count: 4000
+  source: 'Test Client'
+

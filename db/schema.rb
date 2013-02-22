@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20111202000000) do
   create_table "statuses", :force => true do |t|
     t.integer  "uid"
     t.string   "screen_name"
+    t.string   "id_str"
     t.string   "text"
     t.datetime "created_at"
     t.boolean  "protected"
