@@ -41,7 +41,7 @@
                           = status.friends_count
                           = status.followers_count
                   %td
-                    = status.text
+                    = auto_link(status.text)
 
           .actions
             = form_for @search, :url => statuses_path, :html => {:method => :get} do |f|

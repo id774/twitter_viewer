@@ -23,7 +23,7 @@
             = link_to @status.id_str, "http://twitter.com/" + @status.screen_name + "/status/" + @status.id_str
         %tr
           %td Text
-          %td= @status.text
+          %td= auto_link(@status.text)
         %tr
           %td Created at
           %td= @status.created_at
