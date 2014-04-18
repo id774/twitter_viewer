@@ -23,3 +23,52 @@ production:
   database: db/production.sqlite3
   pool: 30
   timeout: 15000
+
+twitter1:
+  adapter: sqlite3
+  database: db/twitter1.sqlite3
+  pool: 30
+  timeout: 15000
+
+twitter2:
+  adapter: sqlite3
+  database: db/twitter2.sqlite3
+  pool: 30
+  timeout: 15000
+
+twitter3:
+  adapter: sqlite3
+  database: db/twitter3.sqlite3
+  pool: 30
+  timeout: 15000
+
+twitter4:
+  adapter: sqlite3
+  database: db/twitter4.sqlite3
+  pool: 30
+  timeout: 15000
+
+twitter5:
+  adapter: sqlite3
+  database: db/twitter5.sqlite3
+  pool: 30
+  timeout: 15000
+
+twitter6:
+  adapter: sqlite3
+  database: db/twitter6.sqlite3
+  pool: 30
+  timeout: 15000
+
+twitter7:
+  adapter: sqlite3
+  database: db/twitter7.sqlite3
+  pool: 30
+  timeout: 15000
+
+twitter8:
+  adapter: sqlite3
+  database: db/twitter8.sqlite3
+  pool: 30
+  timeout: 15000
+
