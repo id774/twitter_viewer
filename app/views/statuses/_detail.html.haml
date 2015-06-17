@@ -12,15 +12,15 @@
         %tr
           %td Uid
           %td
-            = link_to @status.uid, "/statuses?uid=" + @status.uid.to_s unless @status.id.nil?
+            = link_to @status.uid, "/statuses?uid=" + @status.uid.to_s, :target => ["_blank"] unless @status.id.nil?
         %tr
           %td Screen name
           %td
-            = link_to @status.screen_name, "/statuses?screen_name=" + @status.screen_name.to_s unless @status.screen_name.nil?
+            = link_to @status.screen_name, "/statuses?screen_name=" + @status.screen_name.to_s, :target => ["_blank"] unless @status.screen_name.nil?
         %tr
           %td Id_str
           %td
-            = link_to @status.id_str, "http://twitter.com/" + @status.screen_name + "/status/" + @status.id_str
+            = link_to @status.id_str, "http://twitter.com/" + @status.screen_name + "/status/" + @status.id_str, :target => ["_blank"]
         %tr
           %td Text
           %td= auto_link(@status.text)
@@ -34,15 +34,15 @@
         %tr
           %td In reply to status
           %td
-            = link_to @status.in_reply_to_status_id, "https://twitter.com/#!/" + @status.in_reply_to_screen_name + "/status/" + @status.in_reply_to_status_id.to_s unless @status.in_reply_to_status_id.nil?
+            = link_to @status.in_reply_to_status_id, "https://twitter.com/#!/" + @status.in_reply_to_screen_name + "/status/" + @status.in_reply_to_status_id.to_s, :target => ["_blank"] unless @status.in_reply_to_status_id.nil?
         %tr
           %td In reply to user
           %td
-            = link_to @status.in_reply_to_user_id, "/statuses?uid=" + @status.in_reply_to_user_id.to_s unless @status.in_reply_to_user_id.nil?
+            = link_to @status.in_reply_to_user_id, "/statuses?uid=" + @status.in_reply_to_user_id.to_s, :target => ["_blank"] unless @status.in_reply_to_user_id.nil?
         %tr
           %td In reply to screen name
           %td
-            = link_to @status.in_reply_to_screen_name, "https://twitter.com/#!/" + @status.in_reply_to_screen_name unless @status.in_reply_to_screen_name.nil?
+            = link_to @status.in_reply_to_screen_name, "https://twitter.com/#!/" + @status.in_reply_to_screen_name, :target => ["_blank"] unless @status.in_reply_to_screen_name.nil?
         %tr
           %td Friends count
           %td= @status.friends_count
