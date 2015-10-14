@@ -45,3 +45,9 @@ twitter8:
   database: db/twitter8.sqlite3
   pool: 30
   timeout: 15000
+
+twitter9:
+  adapter: sqlite3
+  database: db/twitter9.sqlite3
+  pool: 30
+  timeout: 15000
